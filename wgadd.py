@@ -40,7 +40,13 @@ def wireguard_reboot():
     os.system(f"systemctl status wg-quick@{CONF_NAME}")
 
 def print_user_data(privatekey):
-    click.echo(f"\n[Interface]\nPrivateKey = {privatekey}\nAddress = 10.0.0.{NUMBER}/32\nDNS = 8.8.8.8\n\n[Peer]\nPublicKey = {SERVER_PUBLICKEY}\nEndpoint = {SERVER_IP}:{PORT}\nAllowedIPs = 0.0.0.0/0\nPersistentKeepalive = 20\n")
+    qr_conf = open('qr.conf', 'w')
+    conf = f"[Interface]\nPrivateKey = {privatekey}\nAddress = 10.0.0.{NUMBER}/32\nDNS = 8.8.8.8\n\n[Peer]\nPublicKey = {SERVER_PUBLICKEY}\nEndpoint = {SERVER_IP}:{PORT}\nAllowedIPs = 0.0.0.0/0\nPersistentKeepalive = 20"
+    qr_conf.write(conf)
+    qr_conf.close()
+    os.system("qrencode -t ansiutf8 < qr.conf")
+    os.system("rm qr.conf")
+    print(f"\n{conf}\n")
 
 if __name__=='__main__':
     main()

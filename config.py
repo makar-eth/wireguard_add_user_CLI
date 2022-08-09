@@ -1,8 +1,8 @@
-SERVER_IP= "" # Внешний ip адрес сервера
-PORT= "" # Порт для Wireguard
-SERVER_PUBLICKEY = ""
+SERVER_IP= "" # External server ip address
+PORT= "" # Port for Wireguard
+SERVER_PUBLICKEY = "" # Server public key
 
-NUMBER= "" # Начиная с какого номера создавать пользователей 10.0.0.NUMBER/32
+NUMBER= "" # Starting from which number to create users 10.0.0.NUMBER/32
 
-CONF_NAME = "" # Имя файла (без .conf)
-CONF_PATH = "" # Путь до конфига(.conf) сервера
+CONF_NAME = "" # File name (without .conf)
+CONF_PATH = "" # Path to config(.conf) for server
