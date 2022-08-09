@@ -9,5 +9,5 @@ python3 wgadd.py username
 
 # TODO
 1. Replace logic of call wgadd.py
-2. Replace comments from Russian to English
-3. Add QR for data to return
+2. ~~Replace comments from Russian to English~~
+3. ~~Add QR for data to return~~
